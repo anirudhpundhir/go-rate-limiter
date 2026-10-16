@@ -23,7 +23,7 @@ func TestRedisConformanceMiniredis(t *testing.T) {
 }
 
 // realRedis returns a client for $RATELIMIT_TEST_REDIS_ADDR or skips.
-func realRedis(t testing.TB) *redis.Client {
+func realRedis(t testing.TB) redis.UniversalClient {
 	addr := os.Getenv("RATELIMIT_TEST_REDIS_ADDR")
 	if addr == "" {
 		t.Skip("RATELIMIT_TEST_REDIS_ADDR not set")
